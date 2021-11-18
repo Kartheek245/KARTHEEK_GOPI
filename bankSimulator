@@ -1,0 +1,125 @@
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include <class.h>
+
+using namespace std;
+class balance{
+      int dollars;
+      int cents; 
+      
+      public:
+       
+        string stringify(){
+            
+            string s = "";
+            
+            s + to_string(dollars);
+            s + "D";
+            s + " ";
+            s + to_string(cents);
+            s + "C";
+
+            return s;  
+        }
+
+        void AddBalance(string s){
+            
+            for(char)
+
+        }
+};
+class bank:balance
+{
+   public:
+    bank(int dol, int cent){
+        dollars = dol;
+        cents = cent;
+    }
+    void Credit();
+    void Debit();
+    void checkBalance();
+    
+};
+
+void bank :: Credit(){
+    
+    string amount;
+    cout <<"\n $ Enter Amount :";
+    cin >> amount;
+    AddBalance(amount);
+    
+}
+
+void bank :: Debit(){
+
+    string amount;
+    cout <<"\n $Enter Amount :";
+    cin >> amount;
+    subtractBalance(amount);
+}
+void bank :: checkBalance(){
+
+    string balance;
+    
+    balance = stringify();
+    cout << balance << endl;
+}
+
+
+
+
+
+
+int main(){
+    
+    bool terminated = false;
+    
+    bank b(0,0);
+    while(1){
+        cout << "$ select an Option:" << endl;
+        cout << "1. $ Credit" << endl;
+        cout << "2. $ Debit" << endl;
+        cout << "3. $ Check Balance"
+        cout << "4. $ Exit" << endl;
+
+        int option ;
+
+        cin >> option ;
+
+        switch(option){
+            case 1 : 
+              b.credit();
+              break;
+            
+            case 2 :
+              if(b.isNegative){
+                  terminated = true;
+                  break;
+              }
+              b.debit();
+              break;
+
+            case 3:
+              
+              b.checkBalance();
+              break;
+
+            case 4:
+              
+              terminated = true;
+              break;
+            
+            default:
+              
+              cout << "please Enter a valid option.." << endl;
+              break;
+        }
+
+        if(terminated == true){
+            break;
+        }
+    }
+
+    return 0;
+}
